@@ -9,7 +9,6 @@ function walkTree(root) {
         window.NodeFilter.SHOW_ELEMENT, 
         { 
             acceptNode: (node) => { 
-                const regex = /play\.google\.com|open\.spotify\.com/;
                 const accept = (node.tagName === 'A' && node.hasAttribute('href')) && regex.exec(node.getAttribute('href')) !== null;
                 if (accept) {
                     return NodeFilter.FILTER_ACCEPT;
