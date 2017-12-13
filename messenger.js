@@ -8,6 +8,7 @@ function walkTree(root) {
         root, 
         window.NodeFilter.SHOW_ELEMENT, 
         { 
+            const regex = new RegExp(service_matches)
             acceptNode: (node) => { 
                 const accept = (node.tagName === 'A' && node.hasAttribute('href')) && regex.exec(node.getAttribute('href')) !== null;
                 if (accept) {

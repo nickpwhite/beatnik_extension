@@ -9,6 +9,7 @@ function walkTree(root) {
         window.NodeFilter.SHOW_ELEMENT, 
         { 
             acceptNode: (node) => { 
+                const regex = new RegExp(`^${service_matches}`)
                 const accept = (node.tagName === 'A' && node.hasAttribute('href')) && regex.exec(node.getAttribute('href')) !== null;
                 if (accept) {
                     return NodeFilter.FILTER_ACCEPT;
@@ -21,7 +22,7 @@ function walkTree(root) {
 
     let node;
     while ((node = treeWalker.nextNode())) {
-		replaceLink(node);
+        replaceLink(node);
     }
 }
 
