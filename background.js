@@ -1,7 +1,7 @@
 const webRequest = typeof browser !== 'undefined' ? browser.webRequest : chrome.webRequest;
 
 const excludeRegex = /https:\/\/beatnik-app\.herokuapp\.com\/index/
-const redirectUrls = ["*://itunes.apple.com/*", "*://play.google.com/music/m*", "*://soundcloud.com/*", "*://open.spotify.com/*"];
+const redirectUrls = ["*://itunes.apple.com/us/album/*", "*://play.google.com/music/m*", "*://soundcloud.com/*", "*://open.spotify.com/*"];
 
 let tabId;
 
