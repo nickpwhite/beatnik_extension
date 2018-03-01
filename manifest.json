@@ -1,21 +1,26 @@
 {
-    "manifest_version": 2,
-    "name": "Beatnik",
-    "version": "1.3",
+  "manifest_version": 2,
+  "name": "Beatnik",
+  "version": "1.4",
 
-    "description": "The Beatnik extension redirects music streaming links to the Beatnik site for a better sharing experience.",
-    "homepage_url": "https://beatnik-app.herokuapp.com/index",
-    "icons": {
-        "64": "icons/beatnik.png"
-    },
+  "description": "The Beatnik extension redirects music streaming links to the Beatnik site for a better sharing experience.",
+  "homepage_url": "https://beatnik-app.herokuapp.com/index",
+  "icons": {
+    "64": "icons/beatnik.png"
+  },
 
-    "permissions": [
-        "webRequest",
-        "webRequestBlocking",
-        "<all_urls>"
+  "permissions": [
+    "storage",
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>"
     ],
 
     "background": {
       "scripts": ["background.js"]
+    },
+
+    "options_ui": {
+      "page": "options.html"
     }
 }
