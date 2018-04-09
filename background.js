@@ -3,7 +3,7 @@ const storage = typeof browser !== 'undefined' ? browser.storage : chrome.storag
 const webRequest = typeof browser !== 'undefined' ? browser.webRequest : chrome.webRequest;
 
 const originExcludeRegex = /https:\/\/beatnik-app\.herokuapp\.com/
-const redirectUrls = ["*://itunes.apple.com/us/album/*", "*://play.google.com/music/m*", "*://soundcloud.com/*", "*://open.spotify.com/*"];
+const redirectUrls = ["*://itunes.apple.com/us/album/*", "*://play.google.com/music/m*", "*://soundcloud.com/*", "*://open.spotify.com/album/*", "*://open.spotify.com/track/*"];
 
 let urlIncludeRegex;
 
