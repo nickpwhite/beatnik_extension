@@ -1,1 +1,1 @@
-zip -r beatnik . -x install.sh \*.git* beatnik.zip
+zip -r beatnik . -x package.sh \*.git* beatnik.zip
