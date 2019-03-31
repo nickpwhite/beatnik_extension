@@ -1,8 +1,9 @@
-const runtime = typeof browser !== 'undefined' ? browser.runtime : chrome.runtime;
-const storage = typeof browser !== 'undefined' ? browser.storage : chrome.storage;
-const webRequest = typeof browser !== 'undefined' ? browser.webRequest : chrome.webRequest;
+const isFirefox = typeof browser !== 'undefined';
+const runtime = isFirefox ? browser.runtime : chrome.runtime;
+const storage = isFirefox ? browser.storage : chrome.storage;
+const webRequest = isFirefox ? browser.webRequest : chrome.webRequest;
 
-const originExcludeRegex = /https:\/\/beatnik-app\.herokuapp\.com/
+const originExcludeRegex = /beatnikapp\.com/
 const redirectUrls = ["*://itunes.apple.com/us/album/*", "*://play.google.com/music/m*", "*://soundcloud.com/*", "*://open.spotify.com/album/*", "*://open.spotify.com/track/*"];
 
 let urlIncludeRegex;
@@ -39,11 +40,11 @@ function updateOptions() {
 
 
 function redirect(requestDetails) {
-  const origin = typeof browser !== 'undefined' ? requestDetails.originUrl : requestDetails.initiator;
+  const origin = isFirefox ? requestDetails.originUrl : requestDetails.initiator;
 
   if (urlIncludeRegex.test(requestDetails.url) && (!originExcludeRegex.test(origin))) {
     return {
-      redirectUrl: `https://beatnik-app.herokuapp.com/convert?q=${requestDetails.url}`
+      redirectUrl: `https://www.beatnikapp.com/search?q=${requestDetails.url}`
     };
   }
 }
